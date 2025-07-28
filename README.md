@@ -15,8 +15,7 @@ Este guia documenta o processo completo de download, instalação e configuraç�
 ---
 
 ## ☕ Etapa 0: Instalação do Java (OpenJDK 17)
-
-O Android Studio já inclui um JDK interno, mas instalar o Java no sistema é útil para builds via terminal ou Gradle fora do IDE.
+Instale a versão do java que o app de coletas utiliza.
 
 ### 0.1 Instalar OpenJDK 17
 
