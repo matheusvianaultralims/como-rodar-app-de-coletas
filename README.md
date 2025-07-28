@@ -14,7 +14,7 @@ Passo a passo para instalar o Android Studio, configurar o Java e rodar o app de
 
 ---
 
-## ☕ 2. Instalar o Java (OpenJDK 17)
+## 2. Instalar o Java (OpenJDK 17)
 
 ### 2.1 Atualize o sistema e instale o Java
 
