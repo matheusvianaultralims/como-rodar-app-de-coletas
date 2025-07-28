@@ -1,17 +1,16 @@
 
-# 📱 Como Instalar o Android Studio no Linux (Ubuntu 20.04+)
+# Como configurar o ambiente e Rodar o App de Coletas (Ubuntu 20.04+)
 
-Passo a passo para instalar o Android Studio, configurar o Java, SDK, rodar um app e criar atalhos.
+Passo a passo para instalar o Android Studio, configurar o Java e rodar o app de coletas.
 
 ---
 
-## ✅ 1. Requisitos
+## 1. Requisitos
 
-- 🖥️ **Ubuntu 20.04 ou superior**  
-- 🧠 **8 GB de RAM** (mínimo recomendado)  
-- 💽 **4 GB de espaço + SDK/emuladores**  
-- ☕ **Java JDK 17 (OpenJDK)**  
-- 🔐 **Acesso root (sudo)**
+- **Ubuntu 20.04 ou superior**  
+- **8 GB de RAM** (mínimo recomendado)  
+- **4 GB de espaço + SDK/emuladores**  
+- **Java JDK 17 (OpenJDK)**  
 
 ---
 
@@ -37,14 +36,14 @@ openjdk 17.0.x ...
 
 ---
 
-## 📦 3. Baixar o Android Studio
+## 3. Baixar o Android Studio
 
 1. Vá para: [developer.android.com/studio](https://developer.android.com/studio)  
 2. Baixe o arquivo `.tar.gz` (ex: `android-studio-2024.1.1.21-linux.tar.gz`)
 
 ---
 
-## 📂 4. Instalar o Android Studio
+## 4. Instalar o Android Studio
 
 ### 4.1 Extraia o arquivo
 
@@ -67,7 +66,7 @@ sudo mv android-studio /opt/
 
 ---
 
-## ⚙️ 5. Configuração Inicial
+## 5. Configuração Inicial
 
 - Aceite os termos de uso  
 - Escolha o modo **Standard**  
@@ -79,7 +78,7 @@ sudo mv android-studio /opt/
 
 ---
 
-## 🧰 6. Ajustes no SDK
+## 6. Ajustes no SDK
 
 ### 6.1 Acesse o SDK Manager
 
@@ -106,7 +105,7 @@ Menu: `Tools > Device Manager`
 
 ---
 
-## 🧪 8. Rodar o App de Coletas
+## 8. Rodar o App de Coletas
 
 ### 8.1 Clone o projeto
 
@@ -124,7 +123,7 @@ npm start
 
 ---
 
-## 🖥️ 9. Criar Atalho no Menu (opcional)
+## 9. Criar Atalho no Menu (opcional)
 
 ### 9.1 Crie o arquivo `.desktop`
 
@@ -149,7 +148,7 @@ Salve com `Ctrl + O`, `Enter` e saia com `Ctrl + X`.
 
 ---
 
-## 🌍 10. Variáveis de Ambiente
+## 10. Variáveis de Ambiente
 
 ### 10.1 Edite o arquivo `.bashrc` ou `.zshrc`
 
@@ -182,7 +181,7 @@ source ~/.bashrc
 
 ---
 
-## 🔌 11. Executar no Celular (USB)
+## 11. Executar no Celular (USB)
 
 1. Ative o **modo desenvolvedor** no celular  
 2. Habilite a **depuração USB**  
@@ -192,7 +191,7 @@ source ~/.bashrc
 
 ---
 
-## 🐞 12. Diagnóstico com React Native Doctor
+## 12. Diagnóstico com React Native Doctor
 
 Se `npm start` falhar, use:
 
