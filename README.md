@@ -2,16 +2,21 @@
 
 Este guia documenta o processo completo de download, instalação e configuração inicial do **Android Studio** em distribuições Linux (Ubuntu 20.04+), incluindo variáveis de ambiente e Java.
 
+---
+
 ## ✅ Requisitos do Sistema
 
-- **Sistema Operacional**: Ubuntu 20.04 ou superior
-- **Memória RAM**: 8 GB (mínimo recomendado)
-- **Espaço em Disco**: 4 GB para o IDE + espaço adicional para SDKs/emuladores
-- **Java JDK**: OpenJDK 17
-- **Permissões**: Acesso de administrador (sudo)
+- **Sistema Operacional**: Ubuntu 20.04 ou superior  
+- **Memória RAM**: 8 GB (mínimo recomendado)  
+- **Espaço em Disco**: 4 GB para o IDE + espaço adicional para SDKs/emuladores  
+- **Java JDK**: OpenJDK 17  
+- **Permissões**: Acesso de administrador (sudo)  
+
+---
 
 ## ☕ Etapa 0: Instalação do Java (OpenJDK 17)
-Instale a versão do java que o app de coletas utiliza.
+
+Instale a versão do Java que o app de coletas utiliza.
 
 ### 0.1 Instalar OpenJDK 17
 
@@ -38,10 +43,10 @@ OpenJDK 64-Bit Server VM (build 17.0.15+0-adhoc..., mixed mode)
 
 ## 📦 Etapa 1: Download do Android Studio
 
-1. Acesse o site oficial: [https://developer.android.com/studio](https://developer.android.com/studio)
-2. Clique em **Download Android Studio**
-3. Aceite os termos de uso
-4. Baixe o arquivo `.tar.gz` (ex: `android-studio-2024.1.1.21-linux.tar.gz`)
+1. Acesse o site oficial: [https://developer.android.com/studio](https://developer.android.com/studio)  
+2. Clique em **Download Android Studio**  
+3. Aceite os termos de uso  
+4. Baixe o arquivo `.tar.gz` (ex: `android-studio-2024.1.1.21-linux.tar.gz`)  
 
 ---
 
@@ -70,13 +75,13 @@ sudo mv android-studio /opt/
 
 ## ⚙️ Etapa 3: Configuração Inicial
 
-1. Aceite os termos
-2. Escolha o modo **Standard**
-3. O Android Studio baixará automaticamente:
-   - SDKs
-   - Build Tools
-   - Emuladores
-   - NDK (opcional)
+1. Aceite os termos  
+2. Escolha o modo **Standard**  
+3. O Android Studio baixará automaticamente:  
+   - SDKs  
+   - Build Tools  
+   - Emuladores  
+   - NDK (opcional)  
 
 ---
 
@@ -87,30 +92,43 @@ sudo mv android-studio /opt/
 Menu: `Tools > SDK Manager`
 
 Instale ou verifique:
-- Android SDK Platform (versões mais usadas)
-- Android SDK Command-line Tools
-- Google USB Driver (caso use dispositivo físico)
+
+- Android SDK Platform (versões mais usadas)  
+- Android SDK Command-line Tools  
+- Google USB Driver (caso use dispositivo físico)  
 
 ---
 
-## 🧪 Etapa 5: Criar e Rodar um Projeto
-
-1. Clique em **"New Project"**
-2. Escolha um template (ex: Empty Activity)
-3. Defina nome, linguagem (Kotlin/Java) e versão do Android
-4. Aguarde o Gradle sincronizar
-5. Clique em ▶️ para rodar no emulador ou dispositivo
-
----
-
-## 📱 Etapa 6: Configurar Emulador (AVD)
+## 📱 Etapa 5: Configurar Emulador (AVD)
 
 Menu: `Tools > Device Manager`
 
-1. Clique em **"Create Device"**
-2. Escolha um modelo (Pixel 5, por exemplo)
-3. Selecione uma imagem do sistema Android
-4. Finalize e clique em **▶️** para iniciar
+1. Clique em **"Create Device"**  
+2. Escolha um modelo (Pixel 5, por exemplo)  
+3. Selecione uma imagem do sistema Android  
+4. Finalize e clique em **▶️** para iniciar  
+
+---
+
+## 🧪 Etapa 6: Rodar o App de Coletas
+
+1. Clone o projeto:
+
+```bash
+git clone https://github.com/ultralims/app-coletas
+```
+
+2. Entre no projeto e instale as dependências:
+
+```bash
+cd app-coletas && npm i
+```
+
+3. Inicie o projeto:
+
+```bash
+npm start
+```
 
 ---
 
@@ -170,60 +188,28 @@ Salve e aplique:
 source ~/.bashrc
 ```
 
-> ⚠️ Ajuste os caminhos conforme seu sistema. Para descobrir o SDK real instalado:
+> ⚠️ Ajuste os caminhos conforme seu sistema.  
+> Para descobrir o SDK real instalado:  
 > - No Android Studio: `File > Settings > Appearance & Behavior > System Settings > Android SDK`
 
 ---
 
 ## 🔌 Etapa 9: Rodar em Dispositivo Físico
 
-1. Ative o **modo desenvolvedor** no celular
-2. Habilite a **depuração USB**
-3. Conecte via USB
-4. Confirme a chave RSA na tela do celular
-5. Execute o app via Android Studio (ícone ▶️)
+1. Ative o **modo desenvolvedor** no celular  
+2. Habilite a **depuração USB**  
+3. Conecte via USB  
+4. Confirme a chave RSA na tela do celular  
+5. Execute o app via Android Studio (ícone ▶️)  
 
 ---
 
-## ❗ Problemas Comuns e Soluções
+## 🐞 Etapa 10: Caso o `npm start` não funcione, faça o debug:
 
-| Erro | Causa Provável | Solução |
-|------|----------------|---------|
-| `SDK not found` | SDK não configurado corretamente | Verifique o caminho nas configurações |
-| Emulador lento/travando | Virtualização desativada | Ative VT-x ou AMD-V na BIOS |
-| Gradle muito lento | Conexão ruim ou proxy ativo | Ative "Offline Mode" em `File > Settings > Build > Gradle` |
-| `java: source release 17 requires target release 17` | Versão incompatível no Gradle | Use OpenJDK 17 e configure corretamente no `build.gradle` |
-
----
-
-## 🧼 Desinstalação
+1. Rode:
 
 ```bash
-sudo rm -rf /opt/android-studio
-sudo rm /usr/share/applications/android-studio.desktop
+npx react-native doctor
 ```
 
-Remover SDK:
-
-```bash
-rm -rf ~/Android/Sdk
-```
-
----
-
-## 📚 Links Úteis
-
-- [Android Studio](https://developer.android.com/studio)
-- [Documentação Android](https://developer.android.com/docs)
-- [Kotlin](https://kotlinlang.org/)
-- [Jetpack Compose](https://developer.android.com/jetpack/compose)
-- [Design Material](https://m3.material.io/)
-
----
-
-## 👨‍💻 Autor
-
-**Matheus Viana**  
-Contribuições e sugestões são bem-vindas!
-
----
+Esse comando verifica se as ferramentas estão corretamente configuradas e oferece sugestões automáticas de correção.
