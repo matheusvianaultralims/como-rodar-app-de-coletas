@@ -110,7 +110,7 @@ Menu: `Tools > Device Manager`
 ### 8.1 Clone o projeto
 
 ```bash
-git clone https://github.com/ultralims/app-coletas
+git clone git@github.com:ultralims/app-coletas.git
 cd app-coletas
 ```
 
