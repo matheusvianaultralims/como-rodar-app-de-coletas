@@ -92,14 +92,14 @@ Menu: `Tools > SDK Manager`
 
 ---
 
-## 📱 7. Criar Emulador (AVD)
+## 7. Criar Emulador (AVD)
 
 ### 7.1 Acesse o Device Manager
 
 Menu: `Tools > Device Manager`
 
 1. Clique em **Create Device**  
-2. Escolha um modelo (ex: Pixel 5)  
+2. Escolha um modelo (ex: Pixel 9)  
 3. Baixe a imagem do sistema Android  
 4. Clique em ▶️ para iniciar o emulador
 
@@ -114,12 +114,14 @@ git clone https://github.com/ultralims/app-coletas
 cd app-coletas
 ```
 
-### 8.2 Instale dependências e rode
+### 8.2 Instale dependências e rode o app
 
 ```bash
 npm install
 npm start
 ```
+
+### 8.3 Aguarde e aperte a para abrir no Android
 
 ---
 
@@ -176,8 +178,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```bash
 source ~/.bashrc
 ```
-
-> ⚠️ Ajuste os caminhos conforme necessário.
 
 ---
 
