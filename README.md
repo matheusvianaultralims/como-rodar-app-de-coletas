@@ -2,8 +2,6 @@
 
 Este guia documenta o processo completo de download, instalação e configuração inicial do **Android Studio** em distribuições Linux (Ubuntu 20.04+), incluindo variáveis de ambiente e Java.
 
----
-
 ## ✅ Requisitos do Sistema
 
 - **Sistema Operacional**: Ubuntu 20.04 ou superior
@@ -11,8 +9,6 @@ Este guia documenta o processo completo de download, instalação e configuraç�
 - **Espaço em Disco**: 4 GB para o IDE + espaço adicional para SDKs/emuladores
 - **Java JDK**: OpenJDK 17
 - **Permissões**: Acesso de administrador (sudo)
-
----
 
 ## ☕ Etapa 0: Instalação do Java (OpenJDK 17)
 Instale a versão do java que o app de coletas utiliza.
