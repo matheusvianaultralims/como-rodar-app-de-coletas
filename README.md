@@ -1,31 +1,29 @@
 # 📱 Instalação e Configuração do Android Studio no Linux
 
-Este guia documenta o processo completo de download, instalação e configuração inicial do **Android Studio** em distribuições Linux (Ubuntu 20.04+), incluindo variáveis de ambiente e Java.
+Este guia cobre todo o processo de instalação e configuração do **Android Studio** em distribuições Linux (Ubuntu 20.04+), incluindo Java, SDK, variáveis de ambiente e execução de um app.
 
 ---
 
 ## ✅ Requisitos do Sistema
 
-- **Sistema Operacional**: Ubuntu 20.04 ou superior  
-- **Memória RAM**: 8 GB (mínimo recomendado)  
-- **Espaço em Disco**: 4 GB para o IDE + espaço adicional para SDKs/emuladores  
-- **Java JDK**: OpenJDK 17  
-- **Permissões**: Acesso de administrador (sudo)  
+- 🖥️ **Sistema Operacional**: Ubuntu 20.04 ou superior  
+- 🧠 **Memória RAM**: 8 GB (mínimo recomendado)  
+- 💽 **Espaço em Disco**: 4 GB para o IDE + espaço adicional para SDKs/emuladores  
+- ☕ **Java JDK**: OpenJDK 17  
+- 🔐 **Permissões**: Acesso de administrador (sudo)  
 
 ---
 
-## ☕ Etapa 0: Instalação do Java (OpenJDK 17)
+## ☕ Etapa 0: Instalar o Java (OpenJDK 17)
 
-Instale a versão do Java que o app de coletas utiliza.
-
-### 0.1 Instalar OpenJDK 17
+### 📌 0.1 Instale o Java
 
 ```bash
 sudo apt update
 sudo apt install openjdk-17-jdk -y
 ```
 
-### 0.2 Verificar a instalação
+### ✅ 0.2 Verifique a instalação
 
 ```bash
 java --version
@@ -41,31 +39,31 @@ OpenJDK 64-Bit Server VM (build 17.0.15+0-adhoc..., mixed mode)
 
 ---
 
-## 📦 Etapa 1: Download do Android Studio
+## 📦 Etapa 1: Baixar o Android Studio
 
-1. Acesse o site oficial: [https://developer.android.com/studio](https://developer.android.com/studio)  
+1. Acesse: [developer.android.com/studio](https://developer.android.com/studio)  
 2. Clique em **Download Android Studio**  
-3. Aceite os termos de uso  
-4. Baixe o arquivo `.tar.gz` (ex: `android-studio-2024.1.1.21-linux.tar.gz`)  
+3. Aceite os termos  
+4. Baixe o `.tar.gz` (ex: `android-studio-2024.1.1.21-linux.tar.gz`)  
 
 ---
 
 ## 📂 Etapa 2: Instalação
 
-### 2.1 Extraia o arquivo
+### 📥 2.1 Extraia o arquivo
 
 ```bash
 cd ~/Downloads
 tar -xvzf android-studio-*.tar.gz
 ```
 
-### 2.2 Mova para `/opt`
+### 🚚 2.2 Mova para `/opt`
 
 ```bash
 sudo mv android-studio /opt/
 ```
 
-### 2.3 Execute o instalador
+### ▶️ 2.3 Execute o Android Studio
 
 ```bash
 /opt/android-studio/bin/studio.sh
@@ -75,56 +73,59 @@ sudo mv android-studio /opt/
 
 ## ⚙️ Etapa 3: Configuração Inicial
 
-1. Aceite os termos  
-2. Escolha o modo **Standard**  
-3. O Android Studio baixará automaticamente:  
-   - SDKs  
+1. Aceite os termos de uso  
+2. Selecione o modo **Standard**  
+3. O Android Studio fará o download automático de:  
+   - Android SDK  
    - Build Tools  
    - Emuladores  
-   - NDK (opcional)  
+   - (Opcional) NDK  
 
 ---
 
-## 🧰 Etapa 4: Configurações Recomendadas
+## 🧰 Etapa 4: Ajustes no SDK Manager
 
-### 4.1 SDK Manager
+### 📍 Acesse:
 
-Menu: `Tools > SDK Manager`
+`Tools > SDK Manager`
 
-Instale ou verifique:
+### ✔️ Certifique-se que os seguintes componentes estão instalados:
 
 - Android SDK Platform (versões mais usadas)  
 - Android SDK Command-line Tools  
-- Google USB Driver (caso use dispositivo físico)  
+- Google USB Driver (para dispositivos físicos)  
 
 ---
 
-## 📱 Etapa 5: Configurar Emulador (AVD)
+## 📱 Etapa 5: Criar Emulador (AVD)
 
-Menu: `Tools > Device Manager`
+### 🛠️ Acesse:
 
-1. Clique em **"Create Device"**  
-2. Escolha um modelo (Pixel 5, por exemplo)  
-3. Selecione uma imagem do sistema Android  
-4. Finalize e clique em **▶️** para iniciar  
+`Tools > Device Manager`
+
+1. Clique em **Create Device**  
+2. Selecione um modelo (ex: Pixel 5)  
+3. Escolha uma imagem do sistema Android  
+4. Finalize e clique em **▶️** para iniciar o emulador  
 
 ---
 
 ## 🧪 Etapa 6: Rodar o App de Coletas
 
-1. Clone o projeto:
+### 🧾 Clone o repositório
 
 ```bash
 git clone https://github.com/ultralims/app-coletas
 ```
 
-2. Entre no projeto e instale as dependências:
+### 📂 Acesse o projeto e instale as dependências
 
 ```bash
-cd app-coletas && npm i
+cd app-coletas
+npm install
 ```
 
-3. Inicie o projeto:
+### ▶️ Inicie o app
 
 ```bash
 npm start
@@ -134,7 +135,7 @@ npm start
 
 ## 🖥️ Etapa 7: Criar Atalho no Menu (opcional)
 
-### 7.1 Criar `.desktop`
+### 📄 7.1 Crie um arquivo `.desktop`
 
 ```bash
 sudo nano /usr/share/applications/android-studio.desktop
@@ -153,15 +154,13 @@ Categories=Development;IDE;
 Terminal=false
 ```
 
-Salvar com `Ctrl + O`, `Enter` e sair com `Ctrl + X`.
+Salve com `Ctrl + O`, `Enter` e saia com `Ctrl + X`.
 
 ---
 
 ## 🌍 Etapa 8: Variáveis de Ambiente
 
-### 8.1 Adicionar JAVA_HOME e ANDROID_HOME
-
-Abra o arquivo `.bashrc` (ou `.zshrc` se usar ZSH):
+### ✏️ Edite o `.bashrc` ou `.zshrc`
 
 ```bash
 nano ~/.bashrc
@@ -182,34 +181,35 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
-Salve e aplique:
+### ✅ Aplique as mudanças
 
 ```bash
 source ~/.bashrc
 ```
 
 > ⚠️ Ajuste os caminhos conforme seu sistema.  
-> Para descobrir o SDK real instalado:  
-> - No Android Studio: `File > Settings > Appearance & Behavior > System Settings > Android SDK`
+> No Android Studio: `File > Settings > Appearance & Behavior > System Settings > Android SDK`
 
 ---
 
-## 🔌 Etapa 9: Rodar em Dispositivo Físico
+## 🔌 Etapa 9: Executar em um Dispositivo Físico
 
 1. Ative o **modo desenvolvedor** no celular  
 2. Habilite a **depuração USB**  
-3. Conecte via USB  
-4. Confirme a chave RSA na tela do celular  
-5. Execute o app via Android Studio (ícone ▶️)  
+3. Conecte o cabo USB  
+4. Aceite a chave RSA no celular  
+5. Execute pelo Android Studio (botão ▶️)  
 
 ---
 
-## 🐞 Etapa 10: Caso o `npm start` não funcione, faça o debug:
+## 🐞 Etapa 10: Debug com React Native Doctor
 
-1. Rode:
+Se o comando `npm start` falhar, use:
 
 ```bash
 npx react-native doctor
 ```
 
-Esse comando verifica se as ferramentas estão corretamente configuradas e oferece sugestões automáticas de correção.
+Esse comando verifica se o ambiente está corretamente configurado e sugere correções automáticas.
+
+---
